@@ -183,11 +183,12 @@ TextButton.BorderSizePixel = 0
 TextButton.Position = UDim2.new(0.159139782, 0, 0.320099175, 0)
 TextButton.Size = UDim2.new(0, 121, 0, 19)
 TextButton.Font = Enum.Font.Highway
-TextButton.Text = "Copy"
+TextButton.Text = "https://discord.gg/c426DP8gT5"
 TextButton.TextColor3 = Color3.fromRGB(135, 255, 219)
 TextButton.TextSize = 20.000
 TextButton.TextStrokeColor3 = Color3.fromRGB(135, 255, 219)
 TextButton.TextXAlignment = Enum.TextXAlignment.Left
+setclipboard("https://discord.gg/PXXj2pZr")
 
 Misc1.Name = "Misc1"
 Misc1.Parent = MF
