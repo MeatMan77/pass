@@ -1,329 +1,539 @@
--- Gui to Lua
--- Version: 3.2
+--[[
 
--- Instances:
+
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
+
+]]
 
 local UI = Instance.new("ScreenGui")
 local MF = Instance.new("ImageLabel")
-local Tabs = Instance.new("Folder")
-local Frames = Instance.new("Folder")
-local Misc = Instance.new("Folder")
-local Credit1 = Instance.new("ImageLabel")
-local CreditTitle = Instance.new("TextLabel")
-local Cred1 = Instance.new("TextLabel")
-local cred2 = Instance.new("TextLabel")
-local Cred1_2 = Instance.new("TextLabel")
-local Cred1_3 = Instance.new("TextLabel")
-local cred2_2 = Instance.new("TextLabel")
-local Cred1_4 = Instance.new("TextLabel")
-local cred2_3 = Instance.new("TextLabel")
-local TextButton = Instance.new("TextButton")
-local Misc1 = Instance.new("ImageLabel")
-local MiscTitle = Instance.new("TextLabel")
-local Infiniteyeild = Instance.new("TextButton")
-local TextButton_Roundify_4px = Instance.new("ImageLabel")
-local ImageLabel = Instance.new("ImageLabel")
-local Home1 = Instance.new("ImageLabel")
-local HomeTitle = Instance.new("TextLabel")
-local Explain = Instance.new("TextLabel")
-local Main1 = Instance.new("ImageLabel")
-local MainTitle = Instance.new("TextLabel")
-local Return = Instance.new("TextButton")
-local TextButton_Roundify_4px_2 = Instance.new("ImageLabel")
-local ImageLabel_2 = Instance.new("ImageLabel")
-local hitbox = Instance.new("TextButton")
-local TextButton_Roundify_4px_3 = Instance.new("ImageLabel")
-local ImageLabel_3 = Instance.new("ImageLabel")
-local Credit = Instance.new("TextButton")
-local Home = Instance.new("TextButton")
-local Main = Instance.new("TextButton")
-local Misc_2 = Instance.new("TextButton")
-local Game = Instance.new("TextLabel")
+local Home = Instance.new("ImageLabel")
+local HTitle = Instance.new("TextLabel")
 local Title = Instance.new("TextLabel")
+local Title_2 = Instance.new("TextLabel")
+local GT = Instance.new("TextLabel")
+local HomeB = Instance.new("TextButton")
+local MainB = Instance.new("TextButton")
+local CreditB = Instance.new("TextButton")
+local Credit = Instance.new("ImageLabel")
+local CTitle = Instance.new("TextLabel")
+local UIDev = Instance.new("TextLabel")
+local LUADev = Instance.new("TextLabel")
+local server = Instance.new("TextLabel")
+local name1 = Instance.new("TextLabel")
+local name = Instance.new("TextLabel")
+local discordlink = Instance.new("TextLabel")
+local Rdate = Instance.new("TextLabel")
+local date = Instance.new("TextLabel")
+local Main = Instance.new("ImageLabel")
+local MTitle = Instance.new("TextLabel")
+local RTS = Instance.new("TextButton")
+local TextButton_Roundify_4px = Instance.new("ImageLabel")
+local RHB = Instance.new("TextButton")
+local TextButton_Roundify_4px_2 = Instance.new("ImageLabel")
+local fly = Instance.new("TextButton")
+local TextButton_Roundify_4px_3 = Instance.new("ImageLabel")
+local noclip = Instance.new("TextButton")
+local TextButton_Roundify_4px_4 = Instance.new("ImageLabel")
+local IY = Instance.new("TextButton")
+local TextButton_Roundify_4px_5 = Instance.new("ImageLabel")
 
---Properties:
+--[[
+
+
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
+
+]]
 
 UI.Name = "UI"
 UI.Parent = game.CoreGui
+--[[
 
+
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
+
+]]
 MF.Name = "MF"
 MF.Parent = UI
 MF.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 MF.BackgroundTransparency = 1.000
-MF.Position = UDim2.new(0.06003635, 0, 0.288888842, 0)
-MF.Size = UDim2.new(0, 615, 0, 403)
+MF.Position = UDim2.new(0.0485142358, 0, 0.332163721, 0)
+MF.Size = UDim2.new(0, 519, 0, 319)
 MF.Image = "rbxassetid://3570695787"
-MF.ImageColor3 = Color3.fromRGB(22, 22, 22)
+MF.ImageColor3 = Color3.fromRGB(18, 18, 18)
 MF.ScaleType = Enum.ScaleType.Slice
 MF.SliceCenter = Rect.new(100, 100, 100, 100)
 MF.SliceScale = 0.040
 MF.Active = true
 MF.Draggable = true
+--[[
 
 
-Tabs.Name = "Tabs"
-Tabs.Parent = MF
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
 
-Frames.Name = "Frames"
-Frames.Parent = MF
+]]
+Home.Name = "Home"
+Home.Parent = MF
+Home.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Home.BackgroundTransparency = 1.000
+Home.Position = UDim2.new(0.303790778, 0, 0, 0)
+Home.Size = UDim2.new(0, 361, 0, 319)
+Home.Image = "rbxassetid://3570695787"
+Home.ImageColor3 = Color3.fromRGB(15, 15, 15)
+Home.ScaleType = Enum.ScaleType.Slice
+Home.SliceCenter = Rect.new(100, 100, 100, 100)
+Home.SliceScale = 0.040
+--[[
 
-Misc.Name = "Misc"
-Misc.Parent = MF
 
-Credit1.Name = "Credit1"
-Credit1.Parent = MF
-Credit1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Credit1.BackgroundTransparency = 1.000
-Credit1.Position = UDim2.new(0.243902445, 0, 0, 0)
-Credit1.Size = UDim2.new(0, 465, 0, 403)
-Credit1.Visible = false
-Credit1.Image = "rbxassetid://3570695787"
-Credit1.ImageColor3 = Color3.fromRGB(15, 15, 15)
-Credit1.ScaleType = Enum.ScaleType.Slice
-Credit1.SliceCenter = Rect.new(100, 100, 100, 100)
-Credit1.SliceScale = 0.040
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
 
-CreditTitle.Name = "CreditTitle"
-CreditTitle.Parent = Credit1
-CreditTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CreditTitle.BackgroundTransparency = 1.000
-CreditTitle.Size = UDim2.new(0, 464, 0, 50)
-CreditTitle.Font = Enum.Font.Highway
-CreditTitle.Text = "Credits"
-CreditTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-CreditTitle.TextSize = 35.000
+]]
+HTitle.Name = "HTitle"
+HTitle.Parent = Home
+HTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HTitle.BackgroundTransparency = 1.000
+HTitle.Position = UDim2.new(-0.00184880733, 0, 0, 0)
+HTitle.Size = UDim2.new(0, 361, 0, 41)
+HTitle.Font = Enum.Font.Highway
+HTitle.Text = "Home"
+HTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+HTitle.TextSize = 25.000
+--[[
 
-Cred1.Name = "Cred1"
-Cred1.Parent = Credit1
-Cred1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Cred1.BackgroundTransparency = 1.000
-Cred1.Position = UDim2.new(0.0129032256, 0, 0.124069482, 0)
-Cred1.Size = UDim2.new(0, 281, 0, 50)
-Cred1.Font = Enum.Font.Highway
-Cred1.Text = "GUI designer:"
-Cred1.TextColor3 = Color3.fromRGB(255, 255, 255)
-Cred1.TextSize = 20.000
-Cred1.TextXAlignment = Enum.TextXAlignment.Left
 
-cred2.Name = "cred2"
-cred2.Parent = Credit1
-cred2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-cred2.BackgroundTransparency = 1.000
-cred2.Position = UDim2.new(0.0129032256, 0, 0.17866005, 0)
-cred2.Size = UDim2.new(0, 281, 0, 50)
-cred2.Font = Enum.Font.Highway
-cred2.Text = "Scripter:"
-cred2.TextColor3 = Color3.fromRGB(255, 255, 255)
-cred2.TextSize = 20.000
-cred2.TextXAlignment = Enum.TextXAlignment.Left
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
 
-Cred1_2.Name = "Cred1"
-Cred1_2.Parent = Credit1
-Cred1_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Cred1_2.BackgroundTransparency = 1.000
-Cred1_2.Position = UDim2.new(0.234117016, 0, 0.124069482, 0)
-Cred1_2.Size = UDim2.new(0, 178, 0, 50)
-Cred1_2.Font = Enum.Font.Highway
-Cred1_2.Text = "hlb/#4005"
-Cred1_2.TextColor3 = Color3.fromRGB(135, 255, 219)
-Cred1_2.TextSize = 20.000
-Cred1_2.TextXAlignment = Enum.TextXAlignment.Left
+]]
+Title.Name = "Title"
+Title.Parent = Home
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.Position = UDim2.new(0.000921275816, 0, 0.128526643, 0)
+Title.Size = UDim2.new(0, 361, 0, 278)
+Title.Font = Enum.Font.Highway
+Title.Text = "Welcome to Eclipse the #1 pass the bomb script! Press any tab on the left to begin!"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 20.000
+Title.TextWrapped = true
+Title.TextYAlignment = Enum.TextYAlignment.Top
+--[[
 
-Cred1_3.Name = "Cred1"
-Cred1_3.Parent = Credit1
-Cred1_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Cred1_3.BackgroundTransparency = 1.000
-Cred1_3.Position = UDim2.new(0.160379067, 0, 0.17866005, 0)
-Cred1_3.Size = UDim2.new(0, 178, 0, 50)
-Cred1_3.Font = Enum.Font.Highway
-Cred1_3.Text = "hlb/#4005"
-Cred1_3.TextColor3 = Color3.fromRGB(135, 255, 219)
-Cred1_3.TextSize = 20.000
-Cred1_3.TextXAlignment = Enum.TextXAlignment.Left
 
-cred2_2.Name = "cred2"
-cred2_2.Parent = Credit1
-cred2_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-cred2_2.BackgroundTransparency = 1.000
-cred2_2.Position = UDim2.new(0.0129032256, 0, 0.233250618, 0)
-cred2_2.Size = UDim2.new(0, 281, 0, 50)
-cred2_2.Font = Enum.Font.Highway
-cred2_2.Text = "Date released:"
-cred2_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-cred2_2.TextSize = 20.000
-cred2_2.TextXAlignment = Enum.TextXAlignment.Left
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
 
-Cred1_4.Name = "Cred1"
-Cred1_4.Parent = Credit1
-Cred1_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Cred1_4.BackgroundTransparency = 1.000
-Cred1_4.Position = UDim2.new(0.250971377, 0, 0.233250618, 0)
-Cred1_4.Size = UDim2.new(0, 178, 0, 50)
-Cred1_4.Font = Enum.Font.Highway
-Cred1_4.Text = "8/5/2021"
-Cred1_4.TextColor3 = Color3.fromRGB(135, 255, 219)
-Cred1_4.TextSize = 20.000
-Cred1_4.TextXAlignment = Enum.TextXAlignment.Left
+]]
+Title_2.Name = "Title"
+Title_2.Parent = MF
+Title_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title_2.BackgroundTransparency = 1.000
+Title_2.Position = UDim2.new(-0.0346820801, 0, 0, 0)
+Title_2.Size = UDim2.new(0, 128, 0, 41)
+Title_2.Font = Enum.Font.Highway
+Title_2.Text = "Eclipse"
+Title_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title_2.TextSize = 25.000
+--[[
 
-cred2_3.Name = "cred2"
-cred2_3.Parent = Credit1
-cred2_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-cred2_3.BackgroundTransparency = 1.000
-cred2_3.Position = UDim2.new(0.0129032256, 0, 0.302729517, 0)
-cred2_3.Size = UDim2.new(0, 281, 0, 38)
-cred2_3.Font = Enum.Font.Highway
-cred2_3.Text = "Discord:"
-cred2_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-cred2_3.TextSize = 20.000
-cred2_3.TextXAlignment = Enum.TextXAlignment.Left
 
-TextButton.Parent = Credit1
-TextButton.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
-TextButton.BorderSizePixel = 0
-TextButton.Position = UDim2.new(0.159139782, 0, 0.320099175, 0)
-TextButton.Size = UDim2.new(0, 121, 0, 19)
-TextButton.Font = Enum.Font.Highway
-TextButton.Text = "https://discord.gg/c426DP8gT5"
-TextButton.TextColor3 = Color3.fromRGB(135, 255, 219)
-TextButton.TextSize = 20.000
-TextButton.TextStrokeColor3 = Color3.fromRGB(135, 255, 219)
-TextButton.TextXAlignment = Enum.TextXAlignment.Left
-setclipboard("https://discord.gg/PXXj2pZr")
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
 
-Misc1.Name = "Misc1"
-Misc1.Parent = MF
-Misc1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Misc1.BackgroundTransparency = 1.000
-Misc1.Position = UDim2.new(0.243902445, 0, 0, 0)
-Misc1.Size = UDim2.new(0, 465, 0, 403)
-Misc1.Visible = false
-Misc1.Image = "rbxassetid://3570695787"
-Misc1.ImageColor3 = Color3.fromRGB(15, 15, 15)
-Misc1.ScaleType = Enum.ScaleType.Slice
-Misc1.SliceCenter = Rect.new(100, 100, 100, 100)
-Misc1.SliceScale = 0.040
+]]
+GT.Name = "GT"
+GT.Parent = MF
+GT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GT.BackgroundTransparency = 1.000
+GT.Position = UDim2.new(-0.0462427735, 0, 0.068965517, 0)
+GT.Size = UDim2.new(0, 191, 0, 41)
+GT.Font = Enum.Font.Highway
+GT.Text = "Pass-The-Bomb"
+GT.TextColor3 = Color3.fromRGB(152, 152, 152)
+GT.TextSize = 20.000
+--[[
 
-MiscTitle.Name = "MiscTitle"
-MiscTitle.Parent = Misc1
-MiscTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-MiscTitle.BackgroundTransparency = 1.000
-MiscTitle.Size = UDim2.new(0, 464, 0, 50)
-MiscTitle.Font = Enum.Font.Highway
-MiscTitle.Text = "Misc"
-MiscTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-MiscTitle.TextSize = 35.000
 
-Infiniteyeild.Name = "Infinite yeild"
-Infiniteyeild.Parent = Misc1
-Infiniteyeild.BackgroundColor3 = Color3.fromRGB(179, 0, 255)
-Infiniteyeild.BackgroundTransparency = 1.000
-Infiniteyeild.BorderSizePixel = 0
-Infiniteyeild.Position = UDim2.new(0.0130000003, 0, 0.123999998, 0)
-Infiniteyeild.Size = UDim2.new(0, 452, 0, 24)
-Infiniteyeild.ZIndex = 2
-Infiniteyeild.Font = Enum.Font.Highway
-Infiniteyeild.Text = "Infinite Yeild"
-Infiniteyeild.TextColor3 = Color3.fromRGB(255, 255, 255)
-Infiniteyeild.TextSize = 17.000
-Infiniteyeild.TextXAlignment = Enum.TextXAlignment.Left
-Infiniteyeild.MouseButton1Click:Connect(function()
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-end)
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
 
-TextButton_Roundify_4px.Name = "TextButton_Roundify_4px"
-TextButton_Roundify_4px.Parent = Infiniteyeild
-TextButton_Roundify_4px.Active = true
-TextButton_Roundify_4px.AnchorPoint = Vector2.new(0.5, 0.5)
-TextButton_Roundify_4px.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_Roundify_4px.BackgroundTransparency = 1.000
-TextButton_Roundify_4px.Position = UDim2.new(0.5, 0, 0.5, 0)
-TextButton_Roundify_4px.Selectable = true
-TextButton_Roundify_4px.Size = UDim2.new(1, 0, 1, 0)
-TextButton_Roundify_4px.Image = "rbxassetid://3570695787"
-TextButton_Roundify_4px.ImageColor3 = Color3.fromRGB(179, 0, 255)
-TextButton_Roundify_4px.ScaleType = Enum.ScaleType.Slice
-TextButton_Roundify_4px.SliceCenter = Rect.new(100, 100, 100, 100)
-TextButton_Roundify_4px.SliceScale = 0.040
+]]
+HomeB.Name = "HomeB"
+HomeB.Parent = MF
+HomeB.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+HomeB.BorderSizePixel = 0
+HomeB.Position = UDim2.new(0, 0, 0.197492152, 0)
+HomeB.Size = UDim2.new(0, 157, 0, 35)
+HomeB.Font = Enum.Font.Highway
+HomeB.Text = "Home"
+HomeB.TextColor3 = Color3.fromRGB(255, 255, 255)
+HomeB.TextSize = 18.000
+--[[
 
-ImageLabel.Parent = Infiniteyeild
-ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel.BackgroundTransparency = 1.000
-ImageLabel.Position = UDim2.new(0.929203689, 0, 0, 0)
-ImageLabel.Size = UDim2.new(0, 31, 0, 24)
-ImageLabel.Image = "rbxassetid://7207675180"
 
-Home1.Name = "Home1"
-Home1.Parent = MF
-Home1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Home1.BackgroundTransparency = 1.000
-Home1.Position = UDim2.new(0.243902445, 0, 0, 0)
-Home1.Size = UDim2.new(0, 465, 0, 403)
-Home1.Image = "rbxassetid://3570695787"
-Home1.ImageColor3 = Color3.fromRGB(15, 15, 15)
-Home1.ScaleType = Enum.ScaleType.Slice
-Home1.SliceCenter = Rect.new(100, 100, 100, 100)
-Home1.SliceScale = 0.040
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
 
-HomeTitle.Name = "HomeTitle"
-HomeTitle.Parent = Home1
-HomeTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-HomeTitle.BackgroundTransparency = 1.000
-HomeTitle.Size = UDim2.new(0, 464, 0, 50)
-HomeTitle.Font = Enum.Font.Highway
-HomeTitle.Text = "Home"
-HomeTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-HomeTitle.TextSize = 35.000
+]]
+MainB.Name = "MainB"
+MainB.Parent = MF
+MainB.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+MainB.BorderSizePixel = 0
+MainB.Position = UDim2.new(0, 0, 0.307210028, 0)
+MainB.Size = UDim2.new(0, 157, 0, 35)
+MainB.Font = Enum.Font.Highway
+MainB.Text = "Main"
+MainB.TextColor3 = Color3.fromRGB(255, 255, 255)
+MainB.TextSize = 18.000
+--[[
 
-Explain.Name = "Explain"
-Explain.Parent = Home1
-Explain.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Explain.BackgroundTransparency = 1.000
-Explain.Position = UDim2.new(0.0193548389, 0, 0.109181143, 0)
-Explain.Size = UDim2.new(0, 449, 0, 359)
-Explain.Font = Enum.Font.Highway
-Explain.Text = "Hey, Thanks for using Dub! This is the first and only working GUI/Script for \"Pass The Bomb\". This is also my first script and I'm thankful for anybody who uses this. Credits can be found in the credit tab, This GUI is completly original, and not a library. Please select any tab to start up your experience!"
-Explain.TextColor3 = Color3.fromRGB(109, 109, 109)
-Explain.TextSize = 29.000
-Explain.TextWrapped = true
-Explain.TextYAlignment = Enum.TextYAlignment.Top
 
-Main1.Name = "Main1"
-Main1.Parent = MF
-Main1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Main1.BackgroundTransparency = 1.000
-Main1.Position = UDim2.new(0.243902445, 0, 0, 0)
-Main1.Size = UDim2.new(0, 465, 0, 403)
-Main1.Visible = false
-Main1.Image = "rbxassetid://3570695787"
-Main1.ImageColor3 = Color3.fromRGB(15, 15, 15)
-Main1.ScaleType = Enum.ScaleType.Slice
-Main1.SliceCenter = Rect.new(100, 100, 100, 100)
-Main1.SliceScale = 0.040
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
 
-MainTitle.Name = "MainTitle"
-MainTitle.Parent = Main1
-MainTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-MainTitle.BackgroundTransparency = 1.000
-MainTitle.Size = UDim2.new(0, 464, 0, 50)
-MainTitle.Font = Enum.Font.Highway
-MainTitle.Text = "Main"
-MainTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-MainTitle.TextSize = 35.000
+]]
+CreditB.Name = "CreditB"
+CreditB.Parent = MF
+CreditB.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+CreditB.BorderSizePixel = 0
+CreditB.Position = UDim2.new(0, 0, 0.416927904, 0)
+CreditB.Size = UDim2.new(0, 157, 0, 35)
+CreditB.Font = Enum.Font.Highway
+CreditB.Text = "Credit"
+CreditB.TextColor3 = Color3.fromRGB(255, 255, 255)
+CreditB.TextSize = 18.000
+--[[
 
-Return.Name = "Return"
-Return.Parent = Main1
-Return.BackgroundColor3 = Color3.fromRGB(179, 0, 255)
-Return.BackgroundTransparency = 1.000
-Return.BorderSizePixel = 0
-Return.Position = UDim2.new(0.0129032256, 0, 0.124069482, 0)
-Return.Size = UDim2.new(0, 452, 0, 24)
-Return.ZIndex = 2
-Return.Font = Enum.Font.Highway
-Return.Text = "Return-to-player(Click after every round)"
-Return.TextColor3 = Color3.fromRGB(255, 255, 255)
-Return.TextSize = 17.000
-Return.TextXAlignment = Enum.TextXAlignment.Left
-Return.MouseButton1Click:Connect(function()
+
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
+
+]]
+Credit.Name = "Credit"
+Credit.Parent = MF
+Credit.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Credit.BackgroundTransparency = 1.000
+Credit.Position = UDim2.new(0.303790778, 0, 0, 0)
+Credit.Size = UDim2.new(0, 361, 0, 319)
+Credit.Visible = false
+Credit.Image = "rbxassetid://3570695787"
+Credit.ImageColor3 = Color3.fromRGB(15, 15, 15)
+Credit.ScaleType = Enum.ScaleType.Slice
+Credit.SliceCenter = Rect.new(100, 100, 100, 100)
+Credit.SliceScale = 0.040
+--[[
+
+
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
+
+]]
+CTitle.Name = "CTitle"
+CTitle.Parent = Credit
+CTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CTitle.BackgroundTransparency = 1.000
+CTitle.Position = UDim2.new(-0.00184880733, 0, 0, 0)
+CTitle.Size = UDim2.new(0, 361, 0, 41)
+CTitle.Font = Enum.Font.Highway
+CTitle.Text = "Credit"
+CTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+CTitle.TextSize = 25.000
+--[[
+
+
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
+
+]]
+UIDev.Name = "UIDev"
+UIDev.Parent = Credit
+UIDev.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UIDev.BackgroundTransparency = 1.000
+UIDev.Position = UDim2.new(-0.00184880733, 0, 0.128526643, 0)
+UIDev.Size = UDim2.new(0, 138, 0, 41)
+UIDev.Font = Enum.Font.Highway
+UIDev.Text = "UI developer:"
+UIDev.TextColor3 = Color3.fromRGB(255, 255, 255)
+UIDev.TextSize = 25.000
+--[[
+
+
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
+
+]]
+LUADev.Name = "LUADev"
+LUADev.Parent = Credit
+LUADev.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LUADev.BackgroundTransparency = 1.000
+LUADev.Position = UDim2.new(0.0258520246, 0, 0.197492167, 0)
+LUADev.Size = UDim2.new(0, 154, 0, 41)
+LUADev.Font = Enum.Font.Highway
+LUADev.Text = "Script developer:"
+LUADev.TextColor3 = Color3.fromRGB(255, 255, 255)
+LUADev.TextSize = 25.000
+--[[
+
+
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
+
+]]
+server.Name = "server"
+server.Parent = Credit
+server.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+server.BackgroundTransparency = 1.000
+server.Position = UDim2.new(0.0258520246, 0, 0.257053286, 0)
+server.Size = UDim2.new(0, 61, 0, 51)
+server.Font = Enum.Font.Highway
+server.Text = "Server:"
+server.TextColor3 = Color3.fromRGB(255, 255, 255)
+server.TextSize = 25.000
+--[[
+
+
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
+
+]]
+name1.Name = "name1"
+name1.Parent = Credit
+name1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+name1.BackgroundTransparency = 1.000
+name1.Position = UDim2.new(0.399813235, 0, 0.128526643, 0)
+name1.Size = UDim2.new(0, 83, 0, 41)
+name1.Font = Enum.Font.Highway
+name1.Text = "hlb/#4005"
+name1.TextColor3 = Color3.fromRGB(136, 0, 255)
+name1.TextSize = 25.000
+--[[
+
+
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
+
+]]
+name.Name = "name"
+name.Parent = Credit
+name.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+name.BackgroundTransparency = 1.000
+name.Position = UDim2.new(0.502306283, 0, 0.197492152, 0)
+name.Size = UDim2.new(0, 83, 0, 41)
+name.Font = Enum.Font.Highway
+name.Text = "hlb/#4005"
+name.TextColor3 = Color3.fromRGB(136, 0, 255)
+name.TextSize = 25.000
+--[[
+
+
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
+
+]]
+discordlink.Name = "discord-link"
+discordlink.Parent = Credit
+discordlink.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+discordlink.BackgroundTransparency = 1.000
+discordlink.Position = UDim2.new(0.244688511, 0, 0.272727281, 0)
+discordlink.Size = UDim2.new(0, 212, 0, 41)
+discordlink.Font = Enum.Font.Highway
+discordlink.Text = "discord.gg/c426DP8gT5"
+discordlink.TextColor3 = Color3.fromRGB(136, 0, 255)
+discordlink.TextSize = 25.000
+--[[
+
+
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
+
+]]
+Rdate.Name = "Rdate"
+Rdate.Parent = Credit
+Rdate.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Rdate.BackgroundTransparency = 1.000
+Rdate.Position = UDim2.new(0.0258520246, 0, 0.307210028, 0)
+Rdate.Size = UDim2.new(0, 122, 0, 68)
+Rdate.Font = Enum.Font.Highway
+Rdate.Text = "Release date:"
+Rdate.TextColor3 = Color3.fromRGB(255, 255, 255)
+Rdate.TextSize = 25.000
+--[[
+
+
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
+
+]]
+date.Name = "date"
+date.Parent = Credit
+date.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+date.BackgroundTransparency = 1.000
+date.Position = UDim2.new(0.244688511, 0, 0.347962379, 0)
+date.Size = UDim2.new(0, 191, 0, 43)
+date.Font = Enum.Font.Highway
+date.Text = "8/6/2021"
+date.TextColor3 = Color3.fromRGB(136, 0, 255)
+date.TextSize = 25.000
+--[[
+
+
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
+
+]]
+Main.Name = "Main"
+Main.Parent = MF
+Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Main.BackgroundTransparency = 1.000
+Main.Position = UDim2.new(0.303790778, 0, 0, 0)
+Main.Size = UDim2.new(0, 361, 0, 319)
+Main.Visible = false
+Main.Image = "rbxassetid://3570695787"
+Main.ImageColor3 = Color3.fromRGB(15, 15, 15)
+Main.ScaleType = Enum.ScaleType.Slice
+Main.SliceCenter = Rect.new(100, 100, 100, 100)
+Main.SliceScale = 0.040
+--[[
+
+
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
+
+]]
+MTitle.Name = "MTitle"
+MTitle.Parent = Main
+MTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MTitle.BackgroundTransparency = 1.000
+MTitle.Position = UDim2.new(-0.00184880733, 0, 0, 0)
+MTitle.Size = UDim2.new(0, 361, 0, 41)
+MTitle.Font = Enum.Font.Highway
+MTitle.Text = "Main"
+MTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+MTitle.TextSize = 25.000
+--[[
+
+
+██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
+██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
+███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
+██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
+██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
+
+]]
+RTS.Name = "RTS"
+RTS.Parent = Main
+RTS.BackgroundColor3 = Color3.fromRGB(136, 0, 255)
+RTS.BackgroundTransparency = 1.000
+RTS.BorderColor3 = Color3.fromRGB(27, 42, 53)
+RTS.BorderSizePixel = 0
+RTS.Position = UDim2.new(0.0249307472, 0, 0.128526643, 0)
+RTS.Size = UDim2.new(0, 344, 0, 22)
+RTS.ZIndex = 2
+RTS.Font = Enum.Font.Highway
+RTS.Text = "Return-to-Player"
+RTS.TextColor3 = Color3.fromRGB(255, 255, 255)
+RTS.TextSize = 17.000
+RTS.TextWrapped = true
+RTS.MouseButton1Down:connect(function()
 	local LocalPlayer = game.Players.LocalPlayer
 	local Character = LocalPlayer.Character
 
@@ -359,44 +569,71 @@ Return.MouseButton1Click:Connect(function()
 			end
 		end)
 	end)
+	
+	game.StarterGui:SetCore("SendNotification",{
+		Title = "Notification";
+		Text = "RTS loaded";
+		Icon = "7164585376";
+
+
+	})
+
+	game.StarterGui:SetCore("SendNotification",{
+		Title = "Notification";
+		Text = "Press button after every round";
+		Icon = "7164585376";
+
+
+	})
 end)
 
-TextButton_Roundify_4px_2.Name = "TextButton_Roundify_4px"
-TextButton_Roundify_4px_2.Parent = Return
-TextButton_Roundify_4px_2.Active = true
-TextButton_Roundify_4px_2.AnchorPoint = Vector2.new(0.5, 0.5)
-TextButton_Roundify_4px_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_Roundify_4px_2.BackgroundTransparency = 1.000
-TextButton_Roundify_4px_2.Position = UDim2.new(0.5, 0, 0.5, 0)
-TextButton_Roundify_4px_2.Selectable = true
-TextButton_Roundify_4px_2.Size = UDim2.new(1, 0, 1, 0)
-TextButton_Roundify_4px_2.Image = "rbxassetid://3570695787"
-TextButton_Roundify_4px_2.ImageColor3 = Color3.fromRGB(179, 0, 255)
-TextButton_Roundify_4px_2.ScaleType = Enum.ScaleType.Slice
-TextButton_Roundify_4px_2.SliceCenter = Rect.new(100, 100, 100, 100)
-TextButton_Roundify_4px_2.SliceScale = 0.040
+TextButton_Roundify_4px.Name = "TextButton_Roundify_4px"
+TextButton_Roundify_4px.Parent = RTS
+TextButton_Roundify_4px.Active = true
+TextButton_Roundify_4px.AnchorPoint = Vector2.new(0.5, 0.5)
+TextButton_Roundify_4px.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_Roundify_4px.BackgroundTransparency = 1.000
+TextButton_Roundify_4px.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextButton_Roundify_4px.Selectable = true
+TextButton_Roundify_4px.Size = UDim2.new(1, 0, 1, 0)
+TextButton_Roundify_4px.Image = "rbxassetid://3570695787"
+TextButton_Roundify_4px.ImageColor3 = Color3.fromRGB(136, 0, 255)
+TextButton_Roundify_4px.ScaleType = Enum.ScaleType.Slice
+TextButton_Roundify_4px.SliceCenter = Rect.new(100, 100, 100, 100)
+TextButton_Roundify_4px.SliceScale = 0.040
 
-ImageLabel_2.Parent = Return
-ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel_2.BackgroundTransparency = 1.000
-ImageLabel_2.Position = UDim2.new(0.929203689, 0, 0, 0)
-ImageLabel_2.Size = UDim2.new(0, 31, 0, 24)
-ImageLabel_2.Image = "rbxassetid://7207565005"
+RHB.Name = "RHB"
+RHB.Parent = Main
+RHB.BackgroundColor3 = Color3.fromRGB(136, 0, 255)
+RHB.BackgroundTransparency = 1.000
+RHB.BorderColor3 = Color3.fromRGB(27, 42, 53)
+RHB.BorderSizePixel = 0
+RHB.Position = UDim2.new(0.0249307472, 0, 0.216300935, 0)
+RHB.Size = UDim2.new(0, 344, 0, 22)
+RHB.ZIndex = 2
+RHB.Font = Enum.Font.Highway
+RHB.Text = "Remove-Hit-Box"
+RHB.TextColor3 = Color3.fromRGB(255, 255, 255)
+RHB.TextSize = 17.000
+RHB.TextWrapped = true
+RHB.MouseButton1Down:connect(function()
+	
+	game.StarterGui:SetCore("SendNotification",{
+		Title = "Notification";
+		Text = "RHB loaded";
+		Icon = "7164585376";
 
-hitbox.Name = "hitbox"
-hitbox.Parent = Main1
-hitbox.BackgroundColor3 = Color3.fromRGB(179, 0, 255)
-hitbox.BackgroundTransparency = 1.000
-hitbox.BorderSizePixel = 0
-hitbox.Position = UDim2.new(0.0129032256, 0, 0.192886695, 0)
-hitbox.Size = UDim2.new(0, 452, 0, 24)
-hitbox.ZIndex = 2
-hitbox.Font = Enum.Font.Highway
-hitbox.Text = "Remove-hitbox(Click after every round)"
-hitbox.TextColor3 = Color3.fromRGB(255, 255, 255)
-hitbox.TextSize = 17.000
-hitbox.TextXAlignment = Enum.TextXAlignment.Left
-hitbox.MouseButton1Click:Connect(function()
+
+	})
+
+	game.StarterGui:SetCore("SendNotification",{
+		Title = "Notification";
+		Text = "Press button after every round";
+		Icon = "7164585376";
+
+
+	})
+	
 	local LocalPlayer = game.Players.LocalPlayer
 	local Character = LocalPlayer.Character
 
@@ -415,13 +652,135 @@ hitbox.MouseButton1Click:Connect(function()
 			end)
 		end
 	end)
+	
+	
 end)
 
+TextButton_Roundify_4px_2.Name = "TextButton_Roundify_4px"
+TextButton_Roundify_4px_2.Parent = RHB
+TextButton_Roundify_4px_2.Active = true
+TextButton_Roundify_4px_2.AnchorPoint = Vector2.new(0.5, 0.5)
+TextButton_Roundify_4px_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_Roundify_4px_2.BackgroundTransparency = 1.000
+TextButton_Roundify_4px_2.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextButton_Roundify_4px_2.Selectable = true
+TextButton_Roundify_4px_2.Size = UDim2.new(1, 0, 1, 0)
+TextButton_Roundify_4px_2.Image = "rbxassetid://3570695787"
+TextButton_Roundify_4px_2.ImageColor3 = Color3.fromRGB(136, 0, 255)
+TextButton_Roundify_4px_2.ScaleType = Enum.ScaleType.Slice
+TextButton_Roundify_4px_2.SliceCenter = Rect.new(100, 100, 100, 100)
+TextButton_Roundify_4px_2.SliceScale = 0.040
+
+fly.Name = "fly"
+fly.Parent = Main
+fly.BackgroundColor3 = Color3.fromRGB(136, 0, 255)
+fly.BackgroundTransparency = 1.000
+fly.BorderColor3 = Color3.fromRGB(27, 42, 53)
+fly.BorderSizePixel = 0
+fly.Position = UDim2.new(0.0249307472, 0, 0.307210028, 0)
+fly.Size = UDim2.new(0, 344, 0, 22)
+fly.ZIndex = 2
+fly.Font = Enum.Font.Highway
+fly.Text = "Fly(e)"
+fly.TextColor3 = Color3.fromRGB(255, 255, 255)
+fly.TextSize = 17.000
+fly.TextWrapped = true
+fly.MouseButton1Down:connect(function()
+	
+	game.StarterGui:SetCore("SendNotification",{
+		Title = "Notification";
+		Text = "Fly Loaded";
+		Icon = "7164585376";
 
 
+	})
+	
+	repeat wait()
+	until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Torso") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid")
+	local mouse = game.Players.LocalPlayer:GetMouse()
+	repeat wait() until mouse
+	local plr = game.Players.LocalPlayer
+	local torso = plr.Character.Torso
+	local flying = true
+	local deb = true
+	local ctrl = {f = 0, b = 0, l = 0, r = 0}
+	local lastctrl = {f = 0, b = 0, l = 0, r = 0}
+	local maxspeed = 50
+	local speed = 0
+
+	function fly()
+		local bg = Instance.new("BodyGyro", torso)
+		bg.P = 9e4
+		bg.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+		bg.cframe = torso.CFrame
+		local bv = Instance.new("BodyVelocity", torso)
+		bv.velocity = Vector3.new(0,0.1,0)
+		bv.maxForce = Vector3.new(9e9, 9e9, 9e9)
+		repeat wait()
+			plr.Character.Humanoid.PlatformStand = true
+			if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then
+				speed = speed+.5+(speed/maxspeed)
+				if speed > maxspeed then
+					speed = maxspeed
+				end
+			elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then
+				speed = speed-1
+				if speed < 0 then
+					speed = 0
+				end
+			end
+			if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then
+				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+				lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r}
+			elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then
+				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+			else
+				bv.velocity = Vector3.new(0,0.1,0)
+			end
+			bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0)
+		until not flying
+		ctrl = {f = 0, b = 0, l = 0, r = 0}
+		lastctrl = {f = 0, b = 0, l = 0, r = 0}
+		speed = 0
+		bg:Destroy()
+		bv:Destroy()
+		plr.Character.Humanoid.PlatformStand = false
+	end
+	mouse.KeyDown:connect(function(key)
+		if key:lower() == "e" then
+			if flying then flying = false
+			else
+				flying = true
+				fly()
+			end
+		elseif key:lower() == "w" then
+			ctrl.f = 1
+		elseif key:lower() == "s" then
+			ctrl.b = -1
+		elseif key:lower() == "a" then
+			ctrl.l = -1
+		elseif key:lower() == "d" then
+			ctrl.r = 1
+		end
+	end)
+	mouse.KeyUp:connect(function(key)
+		if key:lower() == "w" then
+			ctrl.f = 0
+		elseif key:lower() == "s" then
+			ctrl.b = 0
+		elseif key:lower() == "a" then
+			ctrl.l = 0
+		elseif key:lower() == "d" then
+			ctrl.r = 0
+		end
+	end)
+	fly()
+	
+
+end)
 
 TextButton_Roundify_4px_3.Name = "TextButton_Roundify_4px"
-TextButton_Roundify_4px_3.Parent = hitbox
+TextButton_Roundify_4px_3.Parent = fly
 TextButton_Roundify_4px_3.Active = true
 TextButton_Roundify_4px_3.AnchorPoint = Vector2.new(0.5, 0.5)
 TextButton_Roundify_4px_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -430,145 +789,159 @@ TextButton_Roundify_4px_3.Position = UDim2.new(0.5, 0, 0.5, 0)
 TextButton_Roundify_4px_3.Selectable = true
 TextButton_Roundify_4px_3.Size = UDim2.new(1, 0, 1, 0)
 TextButton_Roundify_4px_3.Image = "rbxassetid://3570695787"
-TextButton_Roundify_4px_3.ImageColor3 = Color3.fromRGB(179, 0, 255)
+TextButton_Roundify_4px_3.ImageColor3 = Color3.fromRGB(136, 0, 255)
 TextButton_Roundify_4px_3.ScaleType = Enum.ScaleType.Slice
 TextButton_Roundify_4px_3.SliceCenter = Rect.new(100, 100, 100, 100)
 TextButton_Roundify_4px_3.SliceScale = 0.040
 
-ImageLabel_3.Parent = hitbox
-ImageLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel_3.BackgroundTransparency = 1.000
-ImageLabel_3.Position = UDim2.new(0.929203689, 0, 0.0231880527, 0)
-ImageLabel_3.Size = UDim2.new(0, 31, 0, 24)
-ImageLabel_3.Image = "rbxassetid://7207605177"
+noclip.Name = "noclip"
+noclip.Parent = Main
+noclip.BackgroundColor3 = Color3.fromRGB(136, 0, 255)
+noclip.BackgroundTransparency = 1.000
+noclip.BorderColor3 = Color3.fromRGB(27, 42, 53)
+noclip.BorderSizePixel = 0
+noclip.Position = UDim2.new(0.0249307472, 0, 0.394984305, 0)
+noclip.Size = UDim2.new(0, 344, 0, 22)
+noclip.ZIndex = 2
+noclip.Font = Enum.Font.Highway
+noclip.Text = "Noclip(k)"
+noclip.TextColor3 = Color3.fromRGB(255, 255, 255)
+noclip.TextSize = 17.000
+noclip.TextWrapped = true
+noclip.MouseButton1Down:connect(function()
+	
+	
+	game.StarterGui:SetCore("SendNotification",{
+		Title = "Notification";
+		Text = "Noclip Loaded";
+		Icon = "7164585376";
 
-Credit.Name = "Credit"
-Credit.Parent = MF
-Credit.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
-Credit.BorderSizePixel = 0
-Credit.Position = UDim2.new(0, 0, 0.461538494, 0)
-Credit.Size = UDim2.new(0, 150, 0, 38)
-Credit.Font = Enum.Font.Highway
-Credit.Text = "Credit"
-Credit.TextColor3 = Color3.fromRGB(255, 255, 255)
-Credit.TextSize = 20.000
 
-Home.Name = "Home"
-Home.Parent = MF
-Home.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
-Home.BorderSizePixel = 0
-Home.Position = UDim2.new(0, 0, 0.17866005, 0)
-Home.Size = UDim2.new(0, 150, 0, 38)
-Home.Font = Enum.Font.Highway
-Home.Text = "Home"
-Home.TextColor3 = Color3.fromRGB(255, 255, 255)
-Home.TextSize = 20.000
+	})
+	
+	noclip = false
+	game:GetService('RunService').Stepped:connect(function()
+		if noclip then
+			game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+		end
+	end)
+	noclip = game.Players.LocalPlayer
+	noclip = noclip:GetMouse()
+	noclip.KeyDown:connect(function(key)
 
-Main.Name = "Main"
-Main.Parent = MF
-Main.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
-Main.BorderSizePixel = 0
-Main.Position = UDim2.new(0, 0, 0.272952855, 0)
-Main.Size = UDim2.new(0, 150, 0, 38)
-Main.Font = Enum.Font.Highway
-Main.Text = "Main"
-Main.TextColor3 = Color3.fromRGB(255, 255, 255)
-Main.TextSize = 20.000
+		if key == "k" then
+			noclip = not noclip
+			game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+		end
+	end)
+end)
 
-Misc_2.Name = "Misc"
-Misc_2.Parent = MF
-Misc_2.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
-Misc_2.BorderSizePixel = 0
-Misc_2.Position = UDim2.new(0, 0, 0.367245674, 0)
-Misc_2.Size = UDim2.new(0, 150, 0, 38)
-Misc_2.Font = Enum.Font.Highway
-Misc_2.Text = "Misc"
-Misc_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Misc_2.TextSize = 20.000
 
-Game.Name = "Game"
-Game.Parent = MF
-Game.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Game.BackgroundTransparency = 1.000
-Game.Position = UDim2.new(0.0113821141, 0, 0.0545905679, 0)
-Game.Size = UDim2.new(0, 608, 0, 50)
-Game.Font = Enum.Font.Highway
-Game.Text = "pass the bomb"
-Game.TextColor3 = Color3.fromRGB(129, 129, 129)
-Game.TextSize = 25.000
-Game.TextXAlignment = Enum.TextXAlignment.Left
+TextButton_Roundify_4px_4.Name = "TextButton_Roundify_4px"
+TextButton_Roundify_4px_4.Parent = noclip
+TextButton_Roundify_4px_4.Active = true
+TextButton_Roundify_4px_4.AnchorPoint = Vector2.new(0.5, 0.5)
+TextButton_Roundify_4px_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_Roundify_4px_4.BackgroundTransparency = 1.000
+TextButton_Roundify_4px_4.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextButton_Roundify_4px_4.Selectable = true
+TextButton_Roundify_4px_4.Size = UDim2.new(1, 0, 1, 0)
+TextButton_Roundify_4px_4.Image = "rbxassetid://3570695787"
+TextButton_Roundify_4px_4.ImageColor3 = Color3.fromRGB(136, 0, 255)
+TextButton_Roundify_4px_4.ScaleType = Enum.ScaleType.Slice
+TextButton_Roundify_4px_4.SliceCenter = Rect.new(100, 100, 100, 100)
+TextButton_Roundify_4px_4.SliceScale = 0.040
 
-Title.Name = "Title"
-Title.Parent = MF
-Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Title.BackgroundTransparency = 1.000
-Title.Position = UDim2.new(0.011382103, 0, -2.98023224e-08, 0)
-Title.Size = UDim2.new(0, 608, 0, 50)
-Title.Font = Enum.Font.Highway
-Title.Text = "Dub v.01"
-Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-Title.TextSize = 29.000
-Title.TextXAlignment = Enum.TextXAlignment.Left
+IY.Name = "IY"
+IY.Parent = Main
+IY.BackgroundColor3 = Color3.fromRGB(136, 0, 255)
+IY.BackgroundTransparency = 1.000
+IY.BorderColor3 = Color3.fromRGB(27, 42, 53)
+IY.BorderSizePixel = 0
+IY.Position = UDim2.new(0.0249307472, 0, 0.485893399, 0)
+IY.Size = UDim2.new(0, 344, 0, 22)
+IY.ZIndex = 2
+IY.Font = Enum.Font.Highway
+IY.Text = "Infinite-Yeild"
+IY.TextColor3 = Color3.fromRGB(255, 255, 255)
+IY.TextSize = 17.000
+IY.TextWrapped = true
+IY.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+	game.StarterGui:SetCore("SendNotification",{
+		Title = "Notification";
+		Text = "Infinite Yeild Loaded";
+		Icon = "7164585376";
+
+
+	})
+end)
+TextButton_Roundify_4px_5.Name = "TextButton_Roundify_4px"
+TextButton_Roundify_4px_5.Parent = IY
+TextButton_Roundify_4px_5.Active = true
+TextButton_Roundify_4px_5.AnchorPoint = Vector2.new(0.5, 0.5)
+TextButton_Roundify_4px_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_Roundify_4px_5.BackgroundTransparency = 1.000
+TextButton_Roundify_4px_5.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextButton_Roundify_4px_5.Selectable = true
+TextButton_Roundify_4px_5.Size = UDim2.new(1, 0, 1, 0)
+TextButton_Roundify_4px_5.Image = "rbxassetid://3570695787"
+TextButton_Roundify_4px_5.ImageColor3 = Color3.fromRGB(136, 0, 255)
+TextButton_Roundify_4px_5.ScaleType = Enum.ScaleType.Slice
+TextButton_Roundify_4px_5.SliceCenter = Rect.new(100, 100, 100, 100)
+TextButton_Roundify_4px_5.SliceScale = 0.040
 
 -- Scripts:
 
-local function TLEL_fake_script() -- Credit.LocalScript 
-	local script = Instance.new('LocalScript', Credit)
+local function TLSHMJC_fake_script() -- HomeB.Tabs 
+	local script = Instance.new('LocalScript', HomeB)
 
 	script.Parent.MouseButton1Click:connect(function()
-		script.Parent.Parent.Main1.Visible = false
-		script.Parent.Parent.Misc1.Visible = false
-		script.Parent.Parent.Home1.Visible = false
-		script.Parent.Parent.Credit1.Visible = true
+		script.Parent.Parent.Home.Visible = true
+		script.Parent.Parent.Credit.Visible = false
+		script.Parent.Parent.Main.Visible = false
+		
 		wait(0.1)
 	end)
 end
-coroutine.wrap(TLEL_fake_script)()
-local function WPKZAUP_fake_script() -- Home.LocalScript 
-	local script = Instance.new('LocalScript', Home)
+coroutine.wrap(TLSHMJC_fake_script)()
+local function YSYB_fake_script() -- MainB.Tabs 
+	local script = Instance.new('LocalScript', MainB)
 
 	script.Parent.MouseButton1Click:connect(function()
-		script.Parent.Parent.Main1.Visible = false
-		script.Parent.Parent.Misc1.Visible = false
-		script.Parent.Parent.Home1.Visible = true
-		script.Parent.Parent.Credit1.Visible = false
+		script.Parent.Parent.Home.Visible = false
+		script.Parent.Parent.Credit.Visible = false
+		script.Parent.Parent.Main.Visible = true
+		
 		wait(0.1)
 	end)
 end
-coroutine.wrap(WPKZAUP_fake_script)()
-local function HTDAB_fake_script() -- Main.LocalScript 
-	local script = Instance.new('LocalScript', Main)
+coroutine.wrap(YSYB_fake_script)()
+local function PREKH_fake_script() -- CreditB.Tabs 
+	local script = Instance.new('LocalScript', CreditB)
 
 	script.Parent.MouseButton1Click:connect(function()
-		script.Parent.Parent.Main1.Visible = true
-		script.Parent.Parent.Misc1.Visible = false
-		script.Parent.Parent.Home1.Visible = false
-		script.Parent.Parent.Credit1.Visible = false
+		script.Parent.Parent.Home.Visible = false
+		script.Parent.Parent.Credit.Visible = true
+		script.Parent.Parent.Main.Visible = false
+		
 		wait(0.1)
 	end)
 end
-coroutine.wrap(HTDAB_fake_script)()
-local function JRDXXB_fake_script() -- Misc_2.LocalScript 
-	local script = Instance.new('LocalScript', Misc_2)
-
-	script.Parent.MouseButton1Click:connect(function()
-		script.Parent.Parent.Main1.Visible = false
-		script.Parent.Parent.Misc1.Visible = true
-		script.Parent.Parent.Home1.Visible = false
-		script.Parent.Parent.Credit1.Visible = false
-		wait(0.1)
-	end)
-end
-coroutine.wrap(JRDXXB_fake_script)()
-local function MLEWJ_fake_script() -- Misc_2.LocalScript 
-	local script = Instance.new('LocalScript', Misc_2)
-
-	script.Parent.MouseButton1Click:connect(function()
-		script.Parent.Parent.Main1.Visible = false
-		script.Parent.Parent.Misc1.Visible = false
-		script.Parent.Parent.Home1.Visible = false
-		script.Parent.Parent.Credit1.Visible = true
-		wait(0.1)
-	end)
-end
-coroutine.wrap(MLEWJ_fake_script)()
+print("hlb/#4005")
+print("hlb/#4005")
+print("hlb/#4005")
+print("hlb/#4005")
+print("hlb/#4005")
+print("hlb/#4005")
+print("hlb/#4005")
+print("hlb/#4005")
+print("hlb/#4005")
+print("hlb/#4005")
+print("hlb/#4005")
+print("hlb/#4005")
+print("hlb/#4005")
+print("hlb/#4005")
+print("hlb/#4005")
+print("hlb/#4005")
+coroutine.wrap(PREKH_fake_script)()
