@@ -9,7 +9,6 @@
 ╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
 
 ]]
-
 local UI = Instance.new("ScreenGui")
 local MF = Instance.new("ImageLabel")
 local Home = Instance.new("ImageLabel")
@@ -36,12 +35,8 @@ local RTS = Instance.new("TextButton")
 local TextButton_Roundify_4px = Instance.new("ImageLabel")
 local RHB = Instance.new("TextButton")
 local TextButton_Roundify_4px_2 = Instance.new("ImageLabel")
-local fly = Instance.new("TextButton")
-local TextButton_Roundify_4px_3 = Instance.new("ImageLabel")
-local noclip = Instance.new("TextButton")
-local TextButton_Roundify_4px_4 = Instance.new("ImageLabel")
 local IY = Instance.new("TextButton")
-local TextButton_Roundify_4px_5 = Instance.new("ImageLabel")
+local TextButton_Roundify_4px_3 = Instance.new("ImageLabel")
 
 --[[
 
@@ -57,22 +52,12 @@ local TextButton_Roundify_4px_5 = Instance.new("ImageLabel")
 
 UI.Name = "UI"
 UI.Parent = game.CoreGui
---[[
 
-
-██╗░░██╗██╗░░░░░██████╗░░░░░██╗░░░██╗░██╗░░░██╗██╗░█████╗░░█████╗░███████╗
-██║░░██║██║░░░░░██╔══██╗░░░██╔╝██████████╗░██╔╝██║██╔══██╗██╔══██╗██╔════╝
-███████║██║░░░░░██████╦╝░░██╔╝░╚═██╔═██╔═╝██╔╝░██║██║░░██║██║░░██║██████╗░
-██╔══██║██║░░░░░██╔══██╗░██╔╝░░██████████╗███████║██║░░██║██║░░██║╚════██╗
-██║░░██║███████╗██████╦╝██╔╝░░░╚██╔═██╔══╝╚════██║╚█████╔╝╚█████╔╝██████╔╝
-╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░░░░╚═╝░╚═╝░░░░░░░░╚═╝░╚════╝░░╚════╝░╚═════╝░
-
-]]
 MF.Name = "MF"
 MF.Parent = UI
 MF.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 MF.BackgroundTransparency = 1.000
-MF.Position = UDim2.new(0.0485142358, 0, 0.332163721, 0)
+MF.Position = UDim2.new(0.0333535224, 0, 0.228070155, 0)
 MF.Size = UDim2.new(0, 519, 0, 319)
 MF.Image = "rbxassetid://3570695787"
 MF.ImageColor3 = Color3.fromRGB(18, 18, 18)
@@ -569,7 +554,7 @@ RTS.MouseButton1Down:connect(function()
 			end
 		end)
 	end)
-	
+
 	game.StarterGui:SetCore("SendNotification",{
 		Title = "Notification";
 		Text = "RTS loaded";
@@ -586,7 +571,6 @@ RTS.MouseButton1Down:connect(function()
 
 	})
 end)
-
 TextButton_Roundify_4px.Name = "TextButton_Roundify_4px"
 TextButton_Roundify_4px.Parent = RTS
 TextButton_Roundify_4px.Active = true
@@ -617,7 +601,7 @@ RHB.TextColor3 = Color3.fromRGB(255, 255, 255)
 RHB.TextSize = 17.000
 RHB.TextWrapped = true
 RHB.MouseButton1Down:connect(function()
-	
+
 	game.StarterGui:SetCore("SendNotification",{
 		Title = "Notification";
 		Text = "RHB loaded";
@@ -633,7 +617,7 @@ RHB.MouseButton1Down:connect(function()
 
 
 	})
-	
+
 	local LocalPlayer = game.Players.LocalPlayer
 	local Character = LocalPlayer.Character
 
@@ -652,10 +636,9 @@ RHB.MouseButton1Down:connect(function()
 			end)
 		end
 	end)
-	
-	
-end)
 
+
+end)
 TextButton_Roundify_4px_2.Name = "TextButton_Roundify_4px"
 TextButton_Roundify_4px_2.Parent = RHB
 TextButton_Roundify_4px_2.Active = true
@@ -671,194 +654,13 @@ TextButton_Roundify_4px_2.ScaleType = Enum.ScaleType.Slice
 TextButton_Roundify_4px_2.SliceCenter = Rect.new(100, 100, 100, 100)
 TextButton_Roundify_4px_2.SliceScale = 0.040
 
-fly.Name = "fly"
-fly.Parent = Main
-fly.BackgroundColor3 = Color3.fromRGB(136, 0, 255)
-fly.BackgroundTransparency = 1.000
-fly.BorderColor3 = Color3.fromRGB(27, 42, 53)
-fly.BorderSizePixel = 0
-fly.Position = UDim2.new(0.0249307472, 0, 0.307210028, 0)
-fly.Size = UDim2.new(0, 344, 0, 22)
-fly.ZIndex = 2
-fly.Font = Enum.Font.Highway
-fly.Text = "Fly(e)"
-fly.TextColor3 = Color3.fromRGB(255, 255, 255)
-fly.TextSize = 17.000
-fly.TextWrapped = true
-fly.MouseButton1Down:connect(function()
-	
-	game.StarterGui:SetCore("SendNotification",{
-		Title = "Notification";
-		Text = "Fly Loaded";
-		Icon = "7164585376";
-
-
-	})
-	
-	repeat wait()
-	until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Torso") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid")
-	local mouse = game.Players.LocalPlayer:GetMouse()
-	repeat wait() until mouse
-	local plr = game.Players.LocalPlayer
-	local torso = plr.Character.Torso
-	local flying = true
-	local deb = true
-	local ctrl = {f = 0, b = 0, l = 0, r = 0}
-	local lastctrl = {f = 0, b = 0, l = 0, r = 0}
-	local maxspeed = 50
-	local speed = 0
-
-	function fly()
-		local bg = Instance.new("BodyGyro", torso)
-		bg.P = 9e4
-		bg.maxTorque = Vector3.new(9e9, 9e9, 9e9)
-		bg.cframe = torso.CFrame
-		local bv = Instance.new("BodyVelocity", torso)
-		bv.velocity = Vector3.new(0,0.1,0)
-		bv.maxForce = Vector3.new(9e9, 9e9, 9e9)
-		repeat wait()
-			plr.Character.Humanoid.PlatformStand = true
-			if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then
-				speed = speed+.5+(speed/maxspeed)
-				if speed > maxspeed then
-					speed = maxspeed
-				end
-			elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then
-				speed = speed-1
-				if speed < 0 then
-					speed = 0
-				end
-			end
-			if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then
-				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
-				lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r}
-			elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then
-				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
-			else
-				bv.velocity = Vector3.new(0,0.1,0)
-			end
-			bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0)
-		until not flying
-		ctrl = {f = 0, b = 0, l = 0, r = 0}
-		lastctrl = {f = 0, b = 0, l = 0, r = 0}
-		speed = 0
-		bg:Destroy()
-		bv:Destroy()
-		plr.Character.Humanoid.PlatformStand = false
-	end
-	mouse.KeyDown:connect(function(key)
-		if key:lower() == "e" then
-			if flying then flying = false
-			else
-				flying = true
-				fly()
-			end
-		elseif key:lower() == "w" then
-			ctrl.f = 1
-		elseif key:lower() == "s" then
-			ctrl.b = -1
-		elseif key:lower() == "a" then
-			ctrl.l = -1
-		elseif key:lower() == "d" then
-			ctrl.r = 1
-		end
-	end)
-	mouse.KeyUp:connect(function(key)
-		if key:lower() == "w" then
-			ctrl.f = 0
-		elseif key:lower() == "s" then
-			ctrl.b = 0
-		elseif key:lower() == "a" then
-			ctrl.l = 0
-		elseif key:lower() == "d" then
-			ctrl.r = 0
-		end
-	end)
-	fly()
-	
-
-end)
-
-TextButton_Roundify_4px_3.Name = "TextButton_Roundify_4px"
-TextButton_Roundify_4px_3.Parent = fly
-TextButton_Roundify_4px_3.Active = true
-TextButton_Roundify_4px_3.AnchorPoint = Vector2.new(0.5, 0.5)
-TextButton_Roundify_4px_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_Roundify_4px_3.BackgroundTransparency = 1.000
-TextButton_Roundify_4px_3.Position = UDim2.new(0.5, 0, 0.5, 0)
-TextButton_Roundify_4px_3.Selectable = true
-TextButton_Roundify_4px_3.Size = UDim2.new(1, 0, 1, 0)
-TextButton_Roundify_4px_3.Image = "rbxassetid://3570695787"
-TextButton_Roundify_4px_3.ImageColor3 = Color3.fromRGB(136, 0, 255)
-TextButton_Roundify_4px_3.ScaleType = Enum.ScaleType.Slice
-TextButton_Roundify_4px_3.SliceCenter = Rect.new(100, 100, 100, 100)
-TextButton_Roundify_4px_3.SliceScale = 0.040
-
-noclip.Name = "noclip"
-noclip.Parent = Main
-noclip.BackgroundColor3 = Color3.fromRGB(136, 0, 255)
-noclip.BackgroundTransparency = 1.000
-noclip.BorderColor3 = Color3.fromRGB(27, 42, 53)
-noclip.BorderSizePixel = 0
-noclip.Position = UDim2.new(0.0249307472, 0, 0.394984305, 0)
-noclip.Size = UDim2.new(0, 344, 0, 22)
-noclip.ZIndex = 2
-noclip.Font = Enum.Font.Highway
-noclip.Text = "Noclip(k)"
-noclip.TextColor3 = Color3.fromRGB(255, 255, 255)
-noclip.TextSize = 17.000
-noclip.TextWrapped = true
-noclip.MouseButton1Down:connect(function()
-	
-	
-	game.StarterGui:SetCore("SendNotification",{
-		Title = "Notification";
-		Text = "Noclip Loaded";
-		Icon = "7164585376";
-
-
-	})
-	
-	noclip = false
-	game:GetService('RunService').Stepped:connect(function()
-		if noclip then
-			game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
-		end
-	end)
-	noclip = game.Players.LocalPlayer
-	noclip = noclip:GetMouse()
-	noclip.KeyDown:connect(function(key)
-
-		if key == "k" then
-			noclip = not noclip
-			game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
-		end
-	end)
-end)
-
-
-TextButton_Roundify_4px_4.Name = "TextButton_Roundify_4px"
-TextButton_Roundify_4px_4.Parent = noclip
-TextButton_Roundify_4px_4.Active = true
-TextButton_Roundify_4px_4.AnchorPoint = Vector2.new(0.5, 0.5)
-TextButton_Roundify_4px_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_Roundify_4px_4.BackgroundTransparency = 1.000
-TextButton_Roundify_4px_4.Position = UDim2.new(0.5, 0, 0.5, 0)
-TextButton_Roundify_4px_4.Selectable = true
-TextButton_Roundify_4px_4.Size = UDim2.new(1, 0, 1, 0)
-TextButton_Roundify_4px_4.Image = "rbxassetid://3570695787"
-TextButton_Roundify_4px_4.ImageColor3 = Color3.fromRGB(136, 0, 255)
-TextButton_Roundify_4px_4.ScaleType = Enum.ScaleType.Slice
-TextButton_Roundify_4px_4.SliceCenter = Rect.new(100, 100, 100, 100)
-TextButton_Roundify_4px_4.SliceScale = 0.040
-
 IY.Name = "IY"
 IY.Parent = Main
 IY.BackgroundColor3 = Color3.fromRGB(136, 0, 255)
 IY.BackgroundTransparency = 1.000
 IY.BorderColor3 = Color3.fromRGB(27, 42, 53)
 IY.BorderSizePixel = 0
-IY.Position = UDim2.new(0.0249307472, 0, 0.485893399, 0)
+IY.Position = UDim2.new(0.0249307472, 0, 0.307210028, 0)
 IY.Size = UDim2.new(0, 344, 0, 22)
 IY.ZIndex = 2
 IY.Font = Enum.Font.Highway
@@ -876,24 +678,24 @@ IY.MouseButton1Down:connect(function()
 
 	})
 end)
-TextButton_Roundify_4px_5.Name = "TextButton_Roundify_4px"
-TextButton_Roundify_4px_5.Parent = IY
-TextButton_Roundify_4px_5.Active = true
-TextButton_Roundify_4px_5.AnchorPoint = Vector2.new(0.5, 0.5)
-TextButton_Roundify_4px_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_Roundify_4px_5.BackgroundTransparency = 1.000
-TextButton_Roundify_4px_5.Position = UDim2.new(0.5, 0, 0.5, 0)
-TextButton_Roundify_4px_5.Selectable = true
-TextButton_Roundify_4px_5.Size = UDim2.new(1, 0, 1, 0)
-TextButton_Roundify_4px_5.Image = "rbxassetid://3570695787"
-TextButton_Roundify_4px_5.ImageColor3 = Color3.fromRGB(136, 0, 255)
-TextButton_Roundify_4px_5.ScaleType = Enum.ScaleType.Slice
-TextButton_Roundify_4px_5.SliceCenter = Rect.new(100, 100, 100, 100)
-TextButton_Roundify_4px_5.SliceScale = 0.040
+TextButton_Roundify_4px_3.Name = "TextButton_Roundify_4px"
+TextButton_Roundify_4px_3.Parent = IY
+TextButton_Roundify_4px_3.Active = true
+TextButton_Roundify_4px_3.AnchorPoint = Vector2.new(0.5, 0.5)
+TextButton_Roundify_4px_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_Roundify_4px_3.BackgroundTransparency = 1.000
+TextButton_Roundify_4px_3.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextButton_Roundify_4px_3.Selectable = true
+TextButton_Roundify_4px_3.Size = UDim2.new(1, 0, 1, 0)
+TextButton_Roundify_4px_3.Image = "rbxassetid://3570695787"
+TextButton_Roundify_4px_3.ImageColor3 = Color3.fromRGB(136, 0, 255)
+TextButton_Roundify_4px_3.ScaleType = Enum.ScaleType.Slice
+TextButton_Roundify_4px_3.SliceCenter = Rect.new(100, 100, 100, 100)
+TextButton_Roundify_4px_3.SliceScale = 0.040
 
 -- Scripts:
 
-local function TLSHMJC_fake_script() -- HomeB.Tabs 
+local function VDLO_fake_script() -- HomeB.Tabs 
 	local script = Instance.new('LocalScript', HomeB)
 
 	script.Parent.MouseButton1Click:connect(function()
@@ -904,8 +706,8 @@ local function TLSHMJC_fake_script() -- HomeB.Tabs
 		wait(0.1)
 	end)
 end
-coroutine.wrap(TLSHMJC_fake_script)()
-local function YSYB_fake_script() -- MainB.Tabs 
+coroutine.wrap(VDLO_fake_script)()
+local function QDXM_fake_script() -- MainB.Tabs 
 	local script = Instance.new('LocalScript', MainB)
 
 	script.Parent.MouseButton1Click:connect(function()
@@ -916,8 +718,8 @@ local function YSYB_fake_script() -- MainB.Tabs
 		wait(0.1)
 	end)
 end
-coroutine.wrap(YSYB_fake_script)()
-local function PREKH_fake_script() -- CreditB.Tabs 
+coroutine.wrap(QDXM_fake_script)()
+local function OXSGRSU_fake_script() -- CreditB.Tabs 
 	local script = Instance.new('LocalScript', CreditB)
 
 	script.Parent.MouseButton1Click:connect(function()
@@ -928,20 +730,4 @@ local function PREKH_fake_script() -- CreditB.Tabs
 		wait(0.1)
 	end)
 end
-print("hlb/#4005")
-print("hlb/#4005")
-print("hlb/#4005")
-print("hlb/#4005")
-print("hlb/#4005")
-print("hlb/#4005")
-print("hlb/#4005")
-print("hlb/#4005")
-print("hlb/#4005")
-print("hlb/#4005")
-print("hlb/#4005")
-print("hlb/#4005")
-print("hlb/#4005")
-print("hlb/#4005")
-print("hlb/#4005")
-print("hlb/#4005")
-coroutine.wrap(PREKH_fake_script)()
+coroutine.wrap(OXSGRSU_fake_script)()
